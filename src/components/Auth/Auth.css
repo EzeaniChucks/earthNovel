@@ -1,0 +1,128 @@
+.auth-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(49, 46, 46, 0.7);
+    z-index: 100;
+    transition: height 1s ease;
+}
+
+.auth-display-holder {
+    margin: 0 20%;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-display-holder-alt {
+    max-width: 600px;
+}
+
+.auth-display {
+    margin-top: 100px;
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    width: 100%;
+    min-width: fit-content;
+    box-shadow: 3px 4px 10px;
+}
+
+.error-msg {
+    color: red;
+}
+
+.auth-display-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.8rem;
+    margin: 5px 5px;
+}
+
+.auth-display label {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(31, 30, 30);
+}
+
+.auth-display p {
+    text-align: center;
+    font-size: 1rem;
+    /* margin-right: 20px; */
+}
+
+.auth-display p span {
+    color: rgb(194, 33, 4);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-display p span:hover {
+    color: tomato;
+}
+
+.auth-display input {
+    /* background-color: rgb(57, 163, 149); */
+    background-color: rgb(213, 235, 232);
+    padding: 10px 13px;
+    font-size: 1rem;
+    width: 100%;
+    margin: 5px 5px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.auth-display-form-alt {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    margin: 10px 15px;
+}
+
+.auth-display-form-alt input {
+    /* margin: 10px 20px; */
+}
+
+.auth-container>button {
+    background-color: rgb(245, 236, 235);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2rem;
+    transition: all 0.5s ease-in;
+}
+
+.auth-container>button:hover {
+    transform: scale(115%);
+    background-color: white;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.btn-container .submit-btn {
+    margin: 5px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.auth-container h1 {
+    margin: 5px 0px 20px 0;
+}
+
+.auth-disappear {
+    height: 0;
+}

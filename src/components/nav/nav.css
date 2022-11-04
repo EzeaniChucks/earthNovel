@@ -1,0 +1,36 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(63, 172, 158);
+    padding: 10px 5%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 5px 15px;
+    z-index: 100;
+}
+
+.nav-bar {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.2rem;
+    transition: all .3s ease;
+}
+
+.nav-bar:hover {
+    color: rgb(228, 228, 228);
+}
+
+.active {
+    transform: scale(105%);
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {}

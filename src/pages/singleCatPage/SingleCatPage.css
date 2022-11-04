@@ -1,0 +1,311 @@
+.single-cat-container-error {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.single-cat-container-error .h1-sorry {
+    margin-bottom: 30px;
+    color: tomato;
+}
+
+.single-cat-container-error .h3-sorry {
+    margin-bottom: 20px;
+}
+
+.single-cat-container {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-top: 20px;
+
+}
+
+.single-cat-title {
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-cat-title h1 {
+    text-transform: capitalize;
+}
+
+.single-cat-title .link {
+    text-decoration: none;
+    color: black;
+}
+
+.tag-filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(249, 249, 249);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 2px 5px;
+}
+
+.single-cat-story-search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.single-cat-story-search>div:nth-of-type(1) {
+    flex-basis: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 500px;
+}
+
+.single-cat-story-search>div:nth-of-type(1)>div>div {
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-cat-story-search>div:nth-of-type(1)>div>div>input {
+    background-color: rgb(230, 230, 230);
+    padding: 5px 7px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.single-cat-story-search>div:nth-of-type(1)>div>svg {
+    font-size: 1.4rem;
+}
+
+.single-cat-story-search>p {
+    justify-self: center;
+}
+
+.cat-tag-display {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.cat-tag-display p {
+    background: rgb(236, 235, 235);
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cat-tag-display>button {
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 2px 10px;
+    background-color: green;
+    color: white;
+}
+
+.rolling-cursor {
+    cursor: wait;
+}
+
+.cat-tag-display>button:hover {
+    background-color: rgb(18, 153, 101);
+}
+
+.cat-tag-display .active {
+    background-color: grey;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.blurb-display-container-container {
+    align-self: flex-start;
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-left: 30px;
+    gap: 10px;
+}
+
+.blurb-display-container-container>div:nth-of-type(1) {
+    position: sticky;
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blurb-display-container-container>div:nth-of-type(1) p {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.blurb-display-container-container>div:nth-of-type(1) p:hover {
+    background-color: rgb(204, 204, 204);
+}
+
+.blurb-display-container {
+    flex-basis: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    background-color: rgb(245, 244, 244);
+    gap: 30px;
+    padding: 20px;
+}
+
+.escape-grid {
+    grid-column: -1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 10px;
+}
+
+.blurb-card {
+    display: flex;
+    gap: 10px;
+    background-color: white;
+    height: 200px;
+    padding: 10px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    border-bottom: 10px solid white;
+    transition: all 0.2s ease-in;
+}
+
+.blurb-card:hover {
+    transform: scale(102%);
+    box-shadow: 0.5px 0.5px 10px;
+}
+
+.blurb-card img {
+    width: 120px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.blurb-card-details div:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blurb-card-details div:nth-of-type(1) h3 {
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin-top: 2px;
+    margin-bottom: -5px;
+}
+
+.blurb-card-details div:nth-of-type(1)>span {
+    margin-left: -5px;
+}
+
+.btn-read-follow {
+    background-color: rgb(18, 144, 175);
+    align-self: flex-start;
+    color: white;
+    width: fit-content;
+    margin: 0 3px;
+    padding: 3px 5px;
+    cursor: pointer;
+    z-index: 100;
+    transition: scale 2s ease-in;
+}
+
+.following-bkg-color {
+    background-color: rgb(155, 224, 204);
+    align-self: flex-start;
+    width: fit-content;
+    margin: 0 3px;
+    padding: 5px 7px;
+    cursor: pointer;
+    z-index: 100;
+    transition: scale 2s ease-in;
+}
+
+.following-bkg-color:hover {
+    transform: scale(110%);
+}
+
+.btn-read-follow:hover {
+    transform: scale(110%);
+}
+
+.blurb-card-details div:nth-of-type(1) button:active {
+    transform: scale(80%);
+}
+
+.blurb-card-details>span {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.blurb-card-details div:nth-of-type(2) {
+    display: flex;
+    gap: 20px;
+}
+
+.blurb-card-details div:nth-of-type(2)>span {
+    font-size: 0.7rem;
+}
+
+.blurb-card-details div:nth-of-type(2)>span>svg {
+    margin-right: 5px;
+}
+
+.blurb-card-details div:nth-of-type(3) {
+    font-size: 0.8rem;
+}
+
+.blurb-card-details div:nth-of-type(3)::first-letter {
+    text-transform: capitalize;
+}
+
+.cat2-tag-display {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+}
+
+.cat2-tag {
+    background: rgb(236, 235, 235);
+    padding: 5px;
+    width: fit-content;
+    border-radius: 5px;
+    font-size: 0.75rem;
+}
+
+.third-div-in-display {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .third-div-in-display {
+        display: flex;
+        position: sticky;
+        flex-basis: 10%;
+        color: grey;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .single-cat-story-search>div:nth-of-type(1) {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

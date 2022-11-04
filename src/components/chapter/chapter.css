@@ -1,0 +1,15 @@
+.chapter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chapter-container>p {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.chapter-container>p:hover {
+    background-color: gray;
+    color: white;
+}

@@ -1,0 +1,28 @@
+.land-page {
+    display: flex;
+    position: relative;
+    margin: auto 5%;
+    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+
+.category-area {
+    flex-basis: 60%;
+}
+
+.logo-area {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .land-page {
+        display: block;
+        text-align: center;
+    }
+
+    .logo-area {
+        margin-top: 20px;
+    }
+}

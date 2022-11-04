@@ -1,0 +1,209 @@
+.create-container {
+    display: flex;
+    gap: 20px;
+}
+
+.the-dashboard {
+    display: flex;
+    min-height: 100vh;
+    position: sticky;
+    flex-direction: column;
+    margin: -5px 10px 5px 10px;
+    padding: 30px 30px 20px 30px;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.dash-img {
+    height: 40px;
+    width: 200px;
+    margin-left: -17px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.dashboard-tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dashboard-tabs>.main-tabs {
+    justify-self: flex-start;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(68, 68, 68);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease-in;
+}
+
+.dashboard-tabs h3:hover {
+    background-color: rgb(222, 231, 227);
+    margin-left: 5px;
+}
+
+.dashboard-tabs h3 svg {
+    margin-right: 10px;
+    margin-bottom: -5px;
+    color: blueviolet;
+    font-size: 1.7rem;
+}
+
+.dashboard-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px 20px 0 20px;
+}
+
+.dashboard-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 25px 5px 10px 0px;
+}
+
+.dashboard-nav-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.dashboard-nav-profile>p {
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    top: 31px;
+    left: 15px;
+    padding: 5px;
+    width: 100px;
+    background-color: rgb(186, 245, 225, 0.5);
+}
+
+.dashboard-nav-profile>p:hover {
+    color: grey;
+}
+
+.dashboard-nav>h3 {
+    cursor: pointer;
+}
+
+.dashboard-nav>h3:nth-of-type(1) {
+    color: blueviolet;
+    font-size: 2rem;
+}
+
+.dashboard-nav>h3:nth-of-type(2) {
+    background-color: rgb(222, 245, 207);
+    padding: 6px 20px;
+    border-radius: 10px;
+}
+
+.dashboard-nav>h3:nth-of-type(2):hover {
+    background-color: rgb(183, 218, 160);
+}
+
+.btn-press:active {
+    transform: scale(95%);
+}
+
+.dashboard-nav-profile button {
+    text-transform: capitalize;
+    padding: 5px 7px 5px 15px;
+}
+
+.dashboard-nav-profile button svg {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+    font-size: 1rem;
+}
+
+.dashboard-nav-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.create-display-area {
+    position: relative;
+    margin-top: 10px;
+    border: 0.5px solid green;
+    height: 75vh;
+    background-color: rgb(247, 244, 244);
+    padding: 50px;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.create-display-area>div:nth-of-type(1) {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    gap: 1px;
+    box-shadow: 1px 1px 20px;
+    padding: 5px 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.plain-nav {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+}
+
+.plain-nav svg {
+    color: rgb(100, 53, 145);
+    margin-bottom: -3px;
+    /* font-weight: bold; */
+}
+
+.shaded-nav {
+    background-color: rgb(139, 201, 177);
+}
+
+@media screen and (max-width:1000px) {
+    .the-dashboard {
+        display: none;
+    }
+
+    .create-display-area {
+        padding: 90px 10px 10px 10px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .dashboard-nav h3 {
+        font-size: 0.6rem;
+    }
+
+    .create-display-area {
+        padding: 10px;
+    }
+
+    .dashboard-nav>h3:nth-of-type(1) {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .dashboard-nav>h3:nth-of-type(1) {
+        display: none;
+    }
+
+
+
+    .create-display-area>div:nth-of-type(1) {
+        display: none;
+    }
+}

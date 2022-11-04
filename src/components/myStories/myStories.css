@@ -1,0 +1,297 @@
+.myStories-container {
+    display: flex;
+    gap: 50px;
+    position: relative;
+}
+
+.book-cover-area {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.book-cover-area h2 {
+    display: flex;
+    margin-bottom: 60px;
+    color: green;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.book-cover-area h2>svg {
+    pointer-events: none;
+}
+
+.book-cover-area p {
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px 5%;
+    margin: 0px 3% 10px;
+    border: 1px solid grey;
+}
+
+.book-cover-area p:hover {
+    color: rgb(100, 99, 99);
+}
+
+.book-cover-area img {
+    width: 150px;
+    height: 230px;
+    border: 0.5px solid rgb(215, 255, 71);
+    margin: 15px 5px 10px 0px;
+    border-radius: 10px;
+    background-color: rgb(235, 231, 231);
+    /* background-color: white; */
+}
+
+.book-cover-area input {
+    display: none;
+}
+
+.create-form {
+    width: 100%;
+}
+
+.create-form h2 {
+    margin-bottom: 30px;
+}
+
+.create-form>form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.create-form>form>p {
+    margin: 10px 0;
+}
+
+.create-form>form>p>span {
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.main-form-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-form-body>label {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 5px;
+}
+
+.main-form-body span {
+    color: red;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.create-form .main-form-body>label>input {
+    padding: 10px;
+    font-size: 0.95rem;
+    margin: 5px;
+    width: 80%;
+    min-width: 250px;
+    outline: none;
+}
+
+.create-form .main-form-body>label>textarea {
+    padding: 10px;
+    font-size: 0.95rem;
+    margin: 5px;
+    width: 80%;
+    min-width: 250px;
+    outline: none;
+}
+
+.create-form>form>label:nth-child(1) {
+    font-weight: bold;
+}
+
+.create-form>form>div>p:nth-child(1) {
+    font-weight: bold;
+}
+
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+}
+
+fieldset label {
+    margin: 0 20px;
+    margin-bottom: 10px;
+}
+
+fieldset input {
+    margin: 0 5px;
+    height: 15px;
+    width: 15px;
+}
+
+.story-tag-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.story-tag-display-tabs {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.story-tag-tabs {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    /* align-items: flex-start;
+    justify-content: flex-start; */
+    gap: 10px;
+    padding: 25px 5px 5px 5px;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.story-tag-tabs hr {
+    border: 1px solid rgb(208, 207, 207);
+    width: 100%;
+}
+
+.story-tag-tabs>p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    height: 35px;
+    padding: 10px 6px;
+    margin: 10px 0;
+    /* border-radius: 6px; */
+    transition: all 0.3s ease;
+    /* text-align: center; */
+}
+
+.story-tag-tabs>p:hover {
+    transform: scale(93%);
+
+}
+
+.tag-display-active {
+    /* background-color: rgb(171, 170, 194); */
+    background-color: rgb(231, 229, 229);
+    border-right: 3px solid tomato;
+}
+
+.story-tag-display {
+    background-color: rgb(255, 255, 255);
+    padding: 20px 10px;
+    max-width: 80%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.tag-display-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tag-display-inner h3 {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+.tag-display-inner h3 svg {
+    color: rgb(174, 174, 174);
+    cursor: pointer;
+}
+
+.display-nonactive {
+    text-align: center;
+    font-weight: normal;
+    margin: 0px 5%;
+    background-color: rgb(234, 229, 229);
+    padding: 3px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.display-active {
+    background-color: rgb(165, 221, 203);
+}
+
+.tags-chosen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    height: fit-content;
+    width: 85%;
+    background-color: white;
+    padding: 20px;
+}
+
+.tags-chosen p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 3px;
+    text-align: center;
+    background-color: rgb(234, 229, 229);
+    padding: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.tags-chosen h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: tomato;
+    grid-column: 1/-1;
+}
+
+@media screen and (max-width:1400px) {
+    .display-nonactive {
+        margin: 0px 5%;
+        padding: 3px;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .book-cover-area img {
+        height: 150px;
+        width: 100px;
+    }
+
+    .book-cover-area p,
+    h4 {
+        font-size: 0.8rem;
+    }
+
+    .display-nonactive {
+        margin: 0px 5%;
+        padding: 3px;
+        font-size: 0.7rem;
+    }
+}

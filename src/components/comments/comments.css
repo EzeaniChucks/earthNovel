@@ -1,0 +1,46 @@
+.hcomments {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    margin: 10px 0 40px 0;
+}
+
+.h-profile-info {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.h-profile-info>h4 {
+    align-self: flex-end;
+    font-size: 1.2rem;
+}
+
+.h-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.hcomments>p {
+    font-size: 1.2rem;
+    text-align: justify;
+    /* text-indent: 10px; */
+    margin: 7px 0 7px 60px;
+}
+
+.h-funct {
+    display: flex;
+    font-weight: bold;
+    gap: 0.9rem;
+    align-items: center;
+    margin-left: 62px;
+    margin-top: -3px;
+    justify-content: flex-start;
+}
+
+.h-funct>p {
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+}

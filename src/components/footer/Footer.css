@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+footer li {
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding-top: 25px;
+    color: grey;
+}
+
+footer li:hover {
+    color: black
+}
