@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { FaGlobe } from 'react-icons/fa'
 import { setIsAuthModalOpen, setClassToggle } from '../../features/modal/modalSlice';
 import './nav.css';
 
@@ -11,7 +12,12 @@ const Nav = () => {
 
     return (
         <div className='nav'>
-            <NavLink to='/' className={({ isActive }) => {
+            <div className='nav-earth-logo'>
+                <FaGlobe />
+                <h2>earthNovel</h2>
+            </div>
+            <div className='nav-earth-links'>
+                <NavLink to='/' className={({ isActive }) => {
                 return isActive ? 'nav-bar active' : 'nav-bar'
             }}>
                 <span>Home</span>
@@ -52,6 +58,8 @@ const Nav = () => {
             }}>
                 <span>About</span>
             </NavLink>
+            </div>
+
         </div>
 
     )

@@ -7,7 +7,7 @@ import './landingPage.css';
 
 const LandingPage = () => {
     return (
-        <main>
+        <main className='land-page-container'>
             <section className='land-page'>
                 <Welcome className='logo-area' />
                 <div className='category-area'>

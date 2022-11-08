@@ -2,25 +2,43 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgb(63, 172, 158);
     padding: 10px 5%;
     position: sticky;
     top: 0;
-    box-shadow: 0 5px 15px;
+    background-color: white;
+        box-shadow: 1px 1px 10px rgb(190, 190, 190);
     z-index: 100;
 }
+.nav-earth-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    color: rgb(95, 95, 95);
+}
 
+.nav-earth-logo>svg {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: green;
+}
+
+.nav-earth-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
 .nav-bar {
     cursor: pointer;
-    color: white;
+    color: rgb(1, 94, 47);
     text-decoration: none;
     list-style: none;
-    font-size: 1.2rem;
-    transition: all .3s ease;
+    font-size: 1rem;
+        transition: all .1s ease;
 }
 
 .nav-bar:hover {
-    color: rgb(228, 228, 228);
+    color: rgb(15, 197, 85);
 }
 
 .active {
@@ -33,4 +51,24 @@ ul {
     justify-content: space-around;
 }
 
-li {}
+@media screen and (max-width: 600px) {
+    .nav {
+        padding: 3px 2%;
+    }
+
+    .nav-earth-logo>svg {
+        font-size: 0.6rem;
+    }
+
+    .nav-earth-logo>h2 {
+        font-size: 0.5rem;
+    }
+
+    .nav-earth-links {
+        gap: 0.5rem;
+    }
+
+    .nav-bar {
+        font-size: 0.6rem;
+    }
+}

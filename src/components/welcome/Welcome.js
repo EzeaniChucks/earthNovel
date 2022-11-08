@@ -37,9 +37,6 @@ const Welcome = () => {
             </div>
             }
             <div className='welcome-logo'>
-                <h1>
-                    <span className='e-span'> e</span>arthNovel
-                </h1>
                 <div>
                     <button className='btn-read' onClick={() => navigate('/story/all')}>Read</button>
                     <button
