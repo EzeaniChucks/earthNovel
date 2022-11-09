@@ -13,13 +13,13 @@ const BrowseCategories = () => {
   return (
     <div className='cat-container'>
       <div className='cat-intro'>
-        <h1>or browse our Shelf</h1>
+        <h1>Or browse our shelf</h1>
         {!user && <button
           onClick={() => {
             dispatch(setIsAuthModalOpen())
             dispatch(setIsNavigateAnchor('explore'));
           }}
-          className='btn'
+          className='btn-log-landing'
         >Log in</button>}
       </div>
       <div className='HRs'>

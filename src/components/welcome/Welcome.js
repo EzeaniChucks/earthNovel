@@ -38,15 +38,15 @@ const Welcome = () => {
             }
             <div className='welcome-logo'>
                 <div>
-                    <button className='btn-read' onClick={() => navigate('/story/all')}>Read</button>
-                    <button
+                    <p className='btn-read' onClick={() => navigate('/story/all')}>Read</p>
+                    <p
                         className='btn-write'
                         onClick={() => {
                             user ? navigate('/dashboard/my-stories')
                                 : dispatch(setIsReadBookModalOpen())
                         }}
                     > Write
-                    </button>
+                    </p>
                 </div>
                 {isReadBookModalOpen && !user && <div>
                     <FaRegWindowClose onClick={() => dispatch(setIsReadBookModalOpen())} />

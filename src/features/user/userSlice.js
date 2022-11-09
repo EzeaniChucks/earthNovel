@@ -78,7 +78,7 @@ export const refreshUser = createAsyncThunk(
 const initialState = {
     user: getItemFromLocalStorage()?.user,
     isLoading: false,
-    isError: false,
+    isError: '',
     success: false
 }
 
@@ -95,29 +95,29 @@ const userSlice = createSlice({
     extraReducers: {
         [registerUser.pending]: (state) => {
             state.isLoading = true
-            state.isError = false
+            state.isError = ''
         },
         [registerUser.fulfilled]: (state, action) => {
             state.user = action.payload;
             state.isLoading = false;
-            state.isError = false;
+            state.isError = '';
         },
         [registerUser.rejected]: (state, { payload }) => {
             state.isLoading = false;
-            state.isError = { message: payload.msg }
+            state.isError = { message: payload }
         },
         [loginUser.pending]: (state) => {
             state.isLoading = true
-            state.isError = false;
+            state.isError = '';
         },
         [loginUser.fulfilled]: (state, action) => {
             state.user = action.payload
             state.isLoading = false
-            state.isError = false
+            state.isError = ''
         },
         [loginUser.rejected]: (state, { payload }) => {
+            state.isError = { message: payload };
             state.isLoading = false;
-            state.isError = { message: payload.desc.slice(0, 31) }
         },
         [getUserAfterBookCreation.pending]: (state) => {
             state.isLoading = true
@@ -130,7 +130,7 @@ const userSlice = createSlice({
         },
         [getUserAfterBookCreation.rejected]: (state, { payload }) => {
             state.isLoading = false;
-            state.isError = { message: payload?.desc?.slice(0, 31) }
+            state.isError = { message: payload }
         },
         [followBook.pending]: (state) => {
             state.isloading = true;

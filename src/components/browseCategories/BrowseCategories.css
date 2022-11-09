@@ -9,18 +9,17 @@
 
 .cat-intro h1 {
     grid-column: 2/3;
-    text-transform: capitalize;
-        font-size: 2em;
+    font-size: 2em;
         margin-bottom: 10px;
         margin-top: 20px;
         color: green;
 }
 
-.cat-container button {
+.cat-intro button {
     padding: 8px 15px;
     align-self: center;
     justify-self: end;
-    margin: 0 20px;
+    /* margin: 0 20px; */
 }
 
 .HRs {
@@ -31,19 +30,20 @@
     padding: 8px;
 }
 
-.cat-container hr {
+.HRs hr {
     border: 2px solid grey;
     background: grey;
-    width: 10px;
-    margin-bottom: 20px;
-    height: 10px;
+    width: 7px;
+    margin-bottom: 7px;
+    height: 7px;
     border-radius: 50%;
 }
 
 .categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 0.8fr));
-    gap: 5rem;
+    display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
     margin: 0 50px;
 }
 
@@ -56,8 +56,8 @@
     padding: 20px;
     border-radius: 50%;
     box-shadow: 3px 5px 7px;
-    height: 180px;
-    width: 180px;
+    height: 150px;
+        width: 150px;
     cursor: pointer;
     overflow: hidden;
     transition: all 0.5s ease;
@@ -83,20 +83,36 @@
     left: 10px;
     z-index: 1;
 }
+
 @media screen and (max-width:600px) {
     .cat-intro h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        }
+        
+        .cat-intro button {
+            padding: 5px;
+            width: 50px;
+            background: transparent;
+            font-size: 0.6rem;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        .HRs hr {
+            width: 5px;
+            height: 5px;
     }
 
     .categories {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
     }
 
     .category {
-        height: 70px;
-        width: 70px;
+        height: 50px;
+            width: 50px;
     }
 
     .category p {

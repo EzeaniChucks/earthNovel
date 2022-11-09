@@ -118,6 +118,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.btn-container .submit-btn:disabled {
+    cursor: progress;
+    background-color: grey;
+}
 
 .auth-container h1 {
     margin: 5px 0px 20px 0;
