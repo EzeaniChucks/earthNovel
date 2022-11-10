@@ -35,7 +35,7 @@
     text-decoration: none;
     list-style: none;
     font-size: 1rem;
-        transition: all .1s ease;
+    transition: all .1s ease;
 }
 
 .nav-bar:hover {
@@ -54,7 +54,7 @@ ul {
 
 @media screen and (max-width: 600px) {
     .nav {
-        padding: 3px 2%;
+        padding: 15px 2%;
     }
 
     .nav-earth-logo>svg {
@@ -62,7 +62,7 @@ ul {
     }
 
     .nav-earth-logo>h2 {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
     }
 
     .nav-earth-links {
@@ -70,6 +70,6 @@ ul {
     }
 
     .nav-bar {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
 }

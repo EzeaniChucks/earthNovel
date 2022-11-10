@@ -40,9 +40,9 @@ const SingleCatPage = () => {
     }
 
     const elongateOrCollapseTags = () => {//display more or less taga
-        collapseTags === 30 ?
+        collapseTags === 20 ?
             dispatch(setCollapseTags(`${collatedTags.length}`))
-            : dispatch(setCollapseTags(30))
+            : dispatch(setCollapseTags(20))
     }
 
     useEffect(() => {//get book category on page load, using catName from params
@@ -58,8 +58,9 @@ const SingleCatPage = () => {
         }
     }, [filteredBooks])
 
-    useEffect(() => {
-        if (packedData.clickedTag) {
+    
+    useEffect(() => {//Bequeaths active class to specific tag after new search result is available
+        if (packedData?.clickedTag) {
             const tags = document.querySelectorAll('.sorting-tags')
 
             tags.forEach((tag) => {
@@ -80,8 +81,7 @@ const SingleCatPage = () => {
     }, [collatedTags])
 
 
-
-    if (isloading && filteredBooks.length === 0) {
+    if (isloading && filteredBooks.length === 0) {//page loading on first visit
         return (
             <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
                 <h3>Page Loading ...</h3>
@@ -91,14 +91,18 @@ const SingleCatPage = () => {
 
     return (
         <>
-            {/* //internet connection failure? Then... */}
-            {error && filteredBooks?.data?.msg === 'Something went wrong' &&
-                <div className='single-cat-container-error'>
+            {/* //internet connection failure or network timeout? Then... */}
+            
+            {error
+            && (filteredBooks === 'timeout exceeded' || filteredBooks==='Network Error')
+            || (filteredBooks?.data?.msg===`Something went wrong`)
+            && <div className='single-cat-container-error'>
                     <h3>Error loading page</h3>
                     <h4>Check your internet connection</h4>
                 </div>
             }
-            {/* categories with empty books? then... */}
+            
+            {/* categories/page with no books at all? then... */}
             {error && (filteredBooks[0]?.title || filteredBooks?.data?.msg === 'No book in this genre yet') &&
                 <div className='single-cat-container-error'>
                     <h1 className='h1-sorry'>Oops!!!</h1>
@@ -116,11 +120,11 @@ const SingleCatPage = () => {
                     <div className='single-cat-title'>
                         <h1>{packedData?.pageTitle} category</h1>
                         <Link to='/' className='link'>
-                            <p>Navigate to main category page?</p>
+                            <p>Navigate back home?</p>
                         </Link>
                     </div>
                     <div className='tag-filter-container'>
-                        <p>Filter search by available tags</p>
+                        <p>Search Story By Available Tags</p>
                         <div className='cat-tag-display'>
                             {collatedTags?.map((tag, i) => {
                                 return (
@@ -134,8 +138,8 @@ const SingleCatPage = () => {
                                     </p>
                                 )
                             })}
-                            {collatedTags.length > 30 && <button onClick={elongateOrCollapseTags}>
-                                {collapseTags === 30 ? 'More Tags?' : 'Less Tags?'}
+                            {collatedTags.length > 20 && <button onClick={elongateOrCollapseTags}>
+                                {collapseTags === 20 ? 'More Tags?' : 'Less Tags?'}
                             </button>}
                         </div>
                     </div>
@@ -144,7 +148,7 @@ const SingleCatPage = () => {
                     <div className='single-cat-story-search'>
                         <div>
                             <div>
-                                <h4>Search Story's Title:</h4>
+                                <h4>Search Story By Title:</h4>
                                 <div>
                                     <input
                                         type='text'
@@ -164,7 +168,6 @@ const SingleCatPage = () => {
                                 dispatch(setIsAuthModalOpen())
                                 dispatch(setIsNavigateAnchor('explore'));
                             }}
-                            className='btn'
                         >Log in</button>}
                     </div>
 
@@ -172,7 +175,7 @@ const SingleCatPage = () => {
                     <div className='blurb-display-container-container'>
                         {/* left hand side of page showing search tabs */}
                         <div>
-                            <h3>Browse Category</h3>
+                            <h3>Browse by category</h3>
                             {categoryData?.map((cat) => {
                                 const { id, catName } = cat
                                 return (
@@ -188,7 +191,7 @@ const SingleCatPage = () => {
                             {/* search is loading */}
                             {isloading &&
                                 <div className='escape-grid'>
-                                    <h3>Page Loading ...</h3>
+                                    <h3>Fetching Stories...</h3>
                                 </div>
                             }
                             {/* search error */}
@@ -197,7 +200,7 @@ const SingleCatPage = () => {
                                 <div className='escape-grid'>
                                     <h3>OOPS! There Appears To Be No Book With This Name</h3>
                                     <h4>Try another searchword.</h4>
-                                    <h4>Or simply click on the category tabs on the left</h4>
+                                    <h4>Or simply click on the category/story tags <span className='alternate'>to the left</span><span className='alternate2'>above</span></h4>
                                 </div>
                             }
                             {/* search success */}

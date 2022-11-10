@@ -85,7 +85,8 @@ export const getFilteredBooks = createAsyncThunk(
             const { data } = await getFilteredBooksAPI(packedData)
             return data
         } catch (err) {
-            return thunkAPI.rejectWithValue(err.response)
+            console.log(err)
+            return thunkAPI.rejectWithValue(err?.response|| err?.message)
         }
     }
 )
@@ -96,7 +97,7 @@ export const editBook = createAsyncThunk(
             if (data) toast.success('Book Succesfully Edited')
             return data;
         } catch (err) {
-            return thunkAPI.rejectWithValue(err.response)
+            return thunkAPI.rejectWithValue(err?.response|| err.message)
         }
     }
 )
@@ -105,7 +106,7 @@ export const fileUpload = createAsyncThunk(
         try {
             await picUploadAPI(filedata)
         } catch (err) {
-            return thunkAPI.rejectWithValue(err.response)
+            return thunkAPI.rejectWithValue(err.response|| err.message)
         }
     }
 )

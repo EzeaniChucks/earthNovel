@@ -11,7 +11,7 @@ const initialState = {
     classToggle: '',
     logoutModal: false,
     deleteBookModal: false,
-    collapseTags: 30,
+    collapseTags: 20,
     isActive: null,
     isNavigateAnchor: null,
 }
