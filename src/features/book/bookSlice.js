@@ -12,6 +12,7 @@ import {
     getSingleBook as getSingleBookAPI,
     editBook as editBookAPI,
     getFilteredBooks as getFilteredBooksAPI,
+    getTitleQuerySearch as getTitleQuerySearchAPI,
     deleteBook as deleteBookAPI,
 } from '../../utils/api/bookApi';
 
@@ -83,6 +84,17 @@ export const getFilteredBooks = createAsyncThunk(
     'filtered-books', async (packedData, thunkAPI) => {
         try {
             const { data } = await getFilteredBooksAPI(packedData)
+            return data
+        } catch (err) {
+            console.log(err)
+            return thunkAPI.rejectWithValue(err?.response|| err?.message)
+        }
+    }
+)
+export const getTitleQuerySearch = createAsyncThunk(
+    'filtered-books', async (packedData, thunkAPI) => {
+        try {
+            const { data } = await getTitleQuerySearchAPI(packedData)
             return data
         } catch (err) {
             console.log(err)
@@ -251,6 +263,23 @@ const bookSlice = createSlice({
             state.success = true;
         },
         [getFilteredBooks.rejected]: (state, { payload }) => {
+            state.isloading = false;
+            state.error = true;
+            state.filteredBooks = payload
+            state.success = true;
+        },
+        [getTitleQuerySearch.pending]: (state) => {
+            state.isloading = true;
+            state.error = false;
+            state.success = false;
+        },
+        [getTitleQuerySearch.fulfilled]: (state, { payload }) => {
+            state.isloading = false;
+            state.filteredBooks = payload
+            state.error = false
+            state.success = true;
+        },
+        [getTitleQuerySearch.rejected]: (state, { payload }) => {
             state.isloading = false;
             state.error = true;
             state.filteredBooks = payload

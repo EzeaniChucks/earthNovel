@@ -374,6 +374,7 @@
     }
     .blurb-display-container-container{
         margin-left: 0;
+        margin-right: 0;
         display: inline;
     }
     .blurb-display-container-container>div:nth-of-type(1) {
@@ -389,29 +390,28 @@
     }
     .blurb-card {
         display: flex;
-        gap: 10px;
-        height: 200px;
-        width: 162px;
+        gap: 5px;
+        height: fit-content;
+        width: 155px;
         padding: 5px;
-        overflow: scroll;
+        /* overflow: scroll; */
     }
     .blurb-card img{
-        height: 100px;
-        width: 70px;
+        height: 70px;
+        width: 50px;
+    }
+    .blurb-card-details div:nth-of-type(1) button{
+        font-size: 0.7rem;
+        margin-bottom: 3px;
     }
     .blurb-card-details div:nth-of-type(1) h3 {
         font-size: 0.8rem;
     }
     .blurb-card-details div:nth-of-type(4){
-        font-size: 0.8rem;
+        display: none;
+        font-size: 0.5rem;
     }
     .cat2-tag-display {
-            display: flex;
-            gap: 3px;
-            flex-wrap: wrap;
-    }
-    .cat2-tag {
-        padding: 4px;
-        font-size: 0.7rem;
+        display: none;
     }
 }

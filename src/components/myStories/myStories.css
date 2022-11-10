@@ -2,12 +2,14 @@
     display: flex;
     gap: 50px;
     position: relative;
+    margin-top: 100px;
 }
 
 .book-cover-area {
     position: -webkit-sticky;
     position: sticky;
-    top: 0px;
+    background-color: rgb(247, 244, 244);
+    top: -10px;
     margin-top: 0px;
     text-align: center;
 }
@@ -278,7 +280,14 @@ fieldset input {
     }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:600px) {
+    .myStories-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        margin-top: 100px;
+    }
     .book-cover-area img {
         height: 150px;
         width: 100px;
