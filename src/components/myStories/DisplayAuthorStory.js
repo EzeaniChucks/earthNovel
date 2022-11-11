@@ -67,16 +67,24 @@ const DisplayAuthorStory = () => {
                             className='addNewStory'
                         >
                             < FaPlus />
-                            <p>Add Story</p>
+                            <p>New story</p>
                         </div>
                     </div>
                     <div className='author-story-mini-container'>
                         {
                             authorBooks.map((story) => {
-                                const { _id, image, reads, status, storybody, title, followers, comments, blurb } = story;
+                                const { _id, image, reads, status, storybody, title, followers, tags, comments, blurb } = story;
                                 return (
                                     <div key={_id} className='author-story-card'>
-                                        <img src={image ? serverPublic + `${image}` : serverPublic + 'default.png'} alt={title} />
+                                        <div>
+                                            <img src={image ? serverPublic + `${image}` : serverPublic + 'default.png'} alt={title} />
+                                            <div className='tags'>
+                                                <h4>TAGS</h4>
+                                                {tags.map((tag)=>{
+                                                    return <p>{tag}</p>
+                                                })}
+                                            </div>
+                                        </div>
                                         <div className='author-story-div'>
                                             <h3>{title}</h3>
                                             <div>

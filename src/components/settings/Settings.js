@@ -2,28 +2,15 @@ import React, { useEffect, useState } from 'react';
 import {FaSun, FaMoon} from 'react-icons/fa';
 import './Settings.css';
 
-const Settings = () => {
-    const [adVars, setAdVars] = useState({
-        fontSize: JSON.parse(localStorage.getItem('earthNovelPreferedFontSize'))?.fontSize || '1.4',
-        fontFam : JSON.parse(localStorage.getItem('earthNovelPreferedFontSize'))?.fontFam || 'Metrophobic',
-    });
-
+const Settings = ({setAdjustmentVars, adjustmentVars}) => {
+    
     const handleChange =(e)=>{
-        setAdVars({...adVars, fontSize:e.target.value})
         const {name} = e.target;
         if(name==='font-fam'){
-            setAdVars({...adVars, fontFam:e.target.value})
+            return setAdjustmentVars({...adjustmentVars, fontFam:e.target.value})
         }
+        setAdjustmentVars({...adjustmentVars, fontSize:e.target.value})
     }
-
-    useEffect(()=>{
-        const font = document.querySelectorAll('.bodyRead')
-        font.forEach((f) => {
-            f.style.fontFamily = adVars.fontFam
-            return f.style.fontSize = adVars.fontSize +'rem'
-        })
-        localStorage.setItem('earthNovelPreferedFontSize', JSON.stringify(adVars))
-    },[adVars])
 
     return (
         <div className='settings-container'>
@@ -35,7 +22,7 @@ const Settings = () => {
                     min= '0.7'
                     max='1.5'
                     step='0.01'
-                    value= {adVars.fontSize}
+                    value= {adjustmentVars.fontSize}
                     onChange={handleChange}
                     className='slider-alt'/>
             </div>

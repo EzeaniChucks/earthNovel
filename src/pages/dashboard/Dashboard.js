@@ -92,14 +92,14 @@ const Dashboard = () => {
             </div>
             <div className='dashboard-body'>
                 <div className='dashboard-nav'>
-                    <h3><AiOutlineOrderedList /></h3>
+                    {/* <h3><AiOutlineOrderedList /></h3> */}
                     <h3 onClick={() => navigate('/story/all')} className='btn-press'>Discover</h3>
                     <h3 className='btn-press'>FAQ</h3>
                     <h3 className='btn-press'>Language<AiOutlineDown /></h3>
                     <div className='dashboard-nav-profile'>
                         <button
                             onClick={() => dispatch(setLogoutModal())}
-                            className='btn btn-press'>
+                            className='btn-press'>
                             {user?.firstname}<AiOutlineDown />
                         </button>
                         {logoutModal && <p onClick={() => {
@@ -144,7 +144,7 @@ const Dashboard = () => {
                             onClick={() => {
                                 navigate('/dashboard/my-stories')
                                 dispatch(setClassToggle('my-stories'))
-                            }}><MdOutlineAutoStories /> My stories
+                            }}><MdOutlineAutoStories /> Stories
                         </h3>
                         <h3
                             className={classToggle === 'messages' ? 'shaded-nav plain-nav' : 'plain-nav'}

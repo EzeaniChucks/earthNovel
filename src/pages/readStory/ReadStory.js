@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FiSettings, FiList } from 'react-icons/fi';
 import { FaComment, FaQuestionCircle, FaTimesCircle  } from 'react-icons/fa';
@@ -42,6 +42,20 @@ const ReadStory = () => {
 
     const { storyId } = useParams();
     const dispatch = useDispatch();
+
+    const [adjustmentVars, setAdjustmentVars] = useState({
+        fontSize: JSON.parse(localStorage.getItem('earthNovelPreferedFontSize'))?.fontSize || '1.4',
+        fontFam: JSON.parse(localStorage.getItem('earthNovelPreferedFontSize'))?.fontFam || 'Metrophobic',
+    });
+
+    useEffect(() => {
+        const font = document.querySelectorAll('.bodyRead')
+        font.forEach((f) => {
+            f.style.fontFamily = adjustmentVars.fontFam
+            return f.style.fontSize = adjustmentVars.fontSize + 'rem'
+        })
+        localStorage.setItem('earthNovelPreferedFontSize', JSON.stringify(adjustmentVars))
+    }, [adjustmentVars, chapterNumber])
 
     const onCreateCmments = () => {
         dispatch(createComment({
@@ -166,7 +180,11 @@ const ReadStory = () => {
                                             setChapterNumber={setChapterNumber}
                                             chapterNumber={chapterNumber} />
                                         }
-                                        {isSettings && <Settings />}
+                                        {isSettings && <Settings
+                                            chapterNumber={chapterNumber}
+                                            setAdjustmentVars={setAdjustmentVars}
+                                            adjustmentVars={adjustmentVars}
+                                            />}
                                         {isComments && <Comments />}
                                         {isFAQ && <FAQ />}
                                     </div>

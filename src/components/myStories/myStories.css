@@ -284,18 +284,24 @@ fieldset input {
     .myStories-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
         position: relative;
-        margin-top: 100px;
+    }
+    .book-cover-area{
+        top: -70px;
+        background-color: rgb(247, 244, 244);
     }
     .book-cover-area img {
-        height: 150px;
-        width: 100px;
+        height: 130px;
+        width: 90px;
     }
 
     .book-cover-area p,
     h4 {
         font-size: 0.8rem;
+        margin-top: -5px;
     }
 
     .display-nonactive {

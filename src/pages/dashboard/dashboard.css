@@ -77,11 +77,14 @@
     position: absolute;
     text-align: center;
     cursor: pointer;
-    top: 31px;
-    left: 15px;
-    padding: 5px;
+    z-index: 100;
+    top: 35px;
+    left: -15px;
+    border-radius: 10%;
+    padding: 10px 5px 20px 5px;
     width: 100px;
-    background-color: rgb(186, 245, 225, 0.5);
+    box-shadow: 1px 4px 10px;
+    background-color: rgb(255, 255, 255);
 }
 
 .dashboard-nav-profile>p:hover {
@@ -93,17 +96,12 @@
 }
 
 .dashboard-nav>h3:nth-of-type(1) {
-    color: blueviolet;
-    font-size: 2rem;
-}
-
-.dashboard-nav>h3:nth-of-type(2) {
     background-color: rgb(222, 245, 207);
     padding: 6px 20px;
     border-radius: 10px;
 }
 
-.dashboard-nav>h3:nth-of-type(2):hover {
+.dashboard-nav>h3:nth-of-type(1):hover {
     background-color: rgb(183, 218, 160);
 }
 
@@ -112,15 +110,19 @@
 }
 
 .dashboard-nav-profile button {
+    cursor: pointer;
     text-transform: capitalize;
     padding: 5px 7px 5px 15px;
 }
 
+.dashboard-nav-profile button:hover{
+    background-color: aquamarine;
+}
+
 .dashboard-nav-profile button svg {
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: -5px;
-    font-size: 1rem;
+    margin-left: 5px;
+    margin-bottom: -3px;
+    font-size: 0.7rem;
 }
 
 .dashboard-nav-profile img {
@@ -136,7 +138,7 @@
     border: 0.5px solid green;
     height: 75vh;
     background-color: rgb(247, 244, 244);
-    padding: 50px;
+    padding: 70px 50px 50px 50px;
     border-radius: 5px;
     overflow-y: auto;
     overflow-x: auto;
@@ -178,7 +180,14 @@
     }
 
     .create-display-area {
-        padding: 90px 10px 10px 10px;
+        padding: 100px 10px 10px 10px;
+    }
+}
+
+
+@media screen and (min-width:1000px) {
+    .create-display-area>div:nth-of-type(1) {
+        display: none;
     }
 }
 
@@ -188,22 +197,28 @@
     }
 
     .create-display-area {
-        padding: 10px;
+        padding: 70px 30px 30px 30px;
     }
 
-    .dashboard-nav>h3:nth-of-type(1) {
-        font-size: 1.4rem;
+    .dashboard-nav-profile button {
+        padding: 5px 6px 5px 5px;;
     }
-}
-
-@media screen and (min-width:1000px) {
-    .dashboard-nav>h3:nth-of-type(1) {
-        display: none;
+    
+    .dashboard-nav-profile>p {
+        padding: 5px 10px;
+        left: -20px;
+        font-size: 0.9rem;
     }
-
-
 
     .create-display-area>div:nth-of-type(1) {
-        display: none;
+        font-size: 0.65rem;
+        padding: 5px;
+    }
+    .plain-nav {
+        padding: 5px 2px;
+    }
+    .plain-nav svg {
+        color: rgb(100, 53, 145);
+        margin-bottom: -3px;
     }
 }
