@@ -4,8 +4,8 @@ import './Settings.css';
 
 const Settings = () => {
     const [adVars, setAdVars] = useState({
-        fontSize: JSON.parse(localStorage.getItem('earthNovelPreferedFontSize')).fontSize || '1.4',
-        fontFam : JSON.parse(localStorage.getItem('earthNovelPreferedFontSize')).fontFam || 'Metrophobic',
+        fontSize: JSON.parse(localStorage.getItem('earthNovelPreferedFontSize'))?.fontSize || '1.4',
+        fontFam : JSON.parse(localStorage.getItem('earthNovelPreferedFontSize'))?.fontFam || 'Metrophobic',
     });
 
     const handleChange =(e)=>{
