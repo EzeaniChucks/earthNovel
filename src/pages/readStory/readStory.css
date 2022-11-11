@@ -76,17 +76,34 @@
     border-bottom: 30px solid rgb(196, 191, 191);
     border-radius: 10px;
     padding: 15px;
-    top: 20px;
-    right: -25px;
+    top: 10px;
+    right: 8px;
     box-shadow: 1px 1px 20px gray;
     background-color: rgb(218, 214, 214);
     overflow-y: auto;
     z-index: 1;
 }
+.modality span{
+    position: absolute;
+    text-align: left;
+    right: 5px;
+    cursor: pointer;
+    z-index: +2;
+}
+
+.modality span:hover{
+    transform: scale(90%);
+}
+
+.modality span svg{
+    z-index: +1;
+    pointer-events: none;
+    font-size: 1.7rem;
+    color: rgb(81, 107, 46);
+}
 
 .modality::-webkit-scrollbar {
     width: 12px;
-
 }
 
 .modality::-webkit-scrollbar-track {
@@ -112,10 +129,10 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    left: 102%;
+    left: 100%;
     top: 7px;
     background-color: rgb(201, 197, 197);
-    padding: 10px;
+    padding: 8px;
     border-radius: 7px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -124,19 +141,19 @@
     text-align: center;
 }
 
-.functionality a {
+.functionality span {
     z-index: +2;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     transition: all 0.3s ease-in;
 }
 
-.functionality a:hover {
+.functionality span:hover {
     transform: scale(90%);
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
@@ -168,8 +185,8 @@
 
 .bodyRead {
     font-family: Metrophobic, sans-serif;
-    font-size: 1.15rem;
-    line-height: 30px;
+    font-size: 1.3rem;
+    line-height: 37px;
     padding: 15px 5%;
     text-indent: 3%;
 }
@@ -181,16 +198,15 @@
     justify-content: center;
     border-radius: 10px;
     left: 0;
-    top: 500px;
+    top: 470px;
     width: 100%;
     height: calc(100% - 470px);
-    padding: 20px 5%;
+    padding: 30px 5%;
     background-image: linear-gradient(to bottom, transparent 10%, rgba(170, 187, 170, 0.5) 40%, rgb(170, 187, 170) 80%);
 }
 
 .bodyRead-blocker span {
     text-align: center;
-    margin-bottom: 15px;
     font-size: 1.3rem;
     align-self: flex-end;
     font-weight: bold;
@@ -250,7 +266,7 @@
         height: 150px;
         width: 100px;
         top: 150px;
-        left: 35%;
+        left: 38%;
     }
 
     .parag-section {
@@ -267,13 +283,16 @@
         margin-right: -30px;
         margin-left: -35px;
     }
+    .section-cover-img{
+        left: 35%;
+    }
     .functionality {
         gap: 2rem;
-        left: 90%;
+        left: 92%;
         top: -5px;
     }
     
-    .functionality a {
+    .functionality span {
         width: 20px;
         height: 20px;
     }
@@ -287,5 +306,12 @@
         width: 210px;
         top: 0px;
         right: 38px;
+    }
+    .bodyRead{
+        font-size: 1.1rem;
+    }
+    .bodyRead-blocker span {
+        margin-bottom: 0px;
+        font-size: 0.9rem;
     }
 }

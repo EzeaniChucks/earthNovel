@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { FiSettings, FiList } from 'react-icons/fi';
-import { FaComment, FaQuestionCircle } from 'react-icons/fa';
+import { FaComment, FaQuestionCircle, FaTimesCircle  } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     createComment,
@@ -52,7 +52,8 @@ const ReadStory = () => {
         }));
     }
 
-    const onFetchComments = (e) => {
+    const onFuncModalOpen = (e) => {
+        e.preventDefault()
         const { name } = e.target.dataset;
         function loader() {
             if (name === 'comments') {
@@ -77,7 +78,7 @@ const ReadStory = () => {
                 dispatch(loadFAQ());
             }
         };
-        if (name === 'body') {
+        if (name === 'windowClose') {
             dispatch(closeModal())
             dispatch(defaultState())
             return dispatch(commentsDefault())
@@ -111,22 +112,18 @@ const ReadStory = () => {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => {//get book to be read, including all its chapters
         dispatch(getSingleBook(storyId))
     }, []);
 
-    useEffect(() => {
-        if (isloading) return;
-    }, [chapterNumber])
-
-    useEffect(() => {
+    useEffect(() => {//get book author and paginate book chapters
         dispatch(getAuthor(book?.userId));
         dispatch(setPagination(paginate(book?.storybody)));
     }, [book]);
 
     const imgsource = process.env.REACT_APP_PUBLIC_FOLDER
     return (
-        <div onClick={onFetchComments} data-name='body' className='readStory-container'>
+        <div className='readStory-container'>
             {/* Left section of page */}
             <div className='writer-section-container'>
                 <WriterSection author={author} />
@@ -140,14 +137,14 @@ const ReadStory = () => {
                         <h3>Loading...</h3>
                     </div>
                 }
-                {/* for books with empty chapter */}
+                {/* for books with no chapters */}
                 {paginatedChapter?.length === 0 && !isloading &&
                     <div className='story-section-no-story'>
                         <h3>No chapters available yet</h3>
                     </div>
                 }
 
-                {/* for book with chapters */}
+                {/* for book with chapters. Paginated chapter loaded depending on chapterNumber */}
                 {paginatedChapter[chapterNumber]?.map((storybod, chapterIndex) => {
                     const { chapterDesc, chapterContent } = storybod
                     return (
@@ -159,11 +156,15 @@ const ReadStory = () => {
                             >
                                 {isModalOpen &&
                                     <div className='modality'>
+                                        <span onClick={onFuncModalOpen} data-name='windowClose'>
+                                            <FaTimesCircle />
+                                        </span>
                                         {/* display chapter list */}
                                         {isChapter && <Chapter
                                             storybody={book?.storybody}
                                             loadChapter={loadChapter}
-                                            setChapterNumber={setChapterNumber} />
+                                            setChapterNumber={setChapterNumber}
+                                            chapterNumber={chapterNumber} />
                                         }
                                         {isSettings && <Settings />}
                                         {isComments && <Comments />}
@@ -171,10 +172,10 @@ const ReadStory = () => {
                                     </div>
                                 }
                                 <div className='functionality'>
-                                    <a onClick={onFetchComments} data-name='list'><FiList /></a>
-                                    <a onClick={onFetchComments} data-name='settings'><FiSettings /></a>
-                                    <a onClick={onFetchComments} data-name='comments'><FaComment /></a>
-                                    <a onClick={onFetchComments} data-name='faq'><FaQuestionCircle /></a>
+                                    <span onClick={onFuncModalOpen} data-name='list'><FiList /></span>
+                                    <span onClick={onFuncModalOpen} data-name='settings'><FiSettings /></span>
+                                    <span onClick={onFuncModalOpen} data-name='comments'><FaComment /></span>
+                                    <span onClick={onFuncModalOpen} data-name='faq'><FaQuestionCircle /></span>
                                 </div>
 
                                 <div className='title-and-author-name'>

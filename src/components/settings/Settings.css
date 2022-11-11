@@ -1,0 +1,36 @@
+.settings-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.font-size-adjustment{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.font-family-adjustment{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 10px;
+}
+.font-family-adjustment>p{
+    margin-bottom: 8px;
+}
+
+.font-family-adjustment li{
+    list-style: none;
+}
+.font-family-adjustment input{
+    margin: 5px;
+}
+.brightness-adjustment input{
+    margin: 10px 0px;
+    appearance: none;
+}
+.brightness-adjustment>div>svg:nth-of-type(2){
+    color: rgb(211, 67, 0);
+    margin-left: 6rem;
+}
