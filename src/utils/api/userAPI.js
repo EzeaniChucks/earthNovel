@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getItemFromLocalStorage } from '../localStorage';
 
-const API = axios.create({ baseURL: 'https://earth-novel.herokuapp.com/' })
+const API = axios.create({ baseURL: "https://earthnovel.dt.r.appspot.com/" });
 
 export const registerUser = (data) => API.post('user/register', data)
 export const loginUser = (data) => API.post('user/login', data);

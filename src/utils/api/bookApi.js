@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { getItemFromLocalStorage } from '../localStorage';
 
-const API = axios.create({ baseURL: 'https://earth-novel.herokuapp.com' })
+const API = axios.create({ baseURL: "https://earthnovel.dt.r.appspot.com" });
 
 export const createBook = (bookData) => API.post('/create-book', bookData, { headers: { authorization: `Bearer ${getItemFromLocalStorage().token}` } });
 export const getAuthorBooks = (authorStoryArray) => API.post('/author-books', { authorStoryArray }, { headers: { authorization: `Bearer ${getItemFromLocalStorage().token}` } });
