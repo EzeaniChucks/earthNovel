@@ -397,7 +397,7 @@
         /* overflow: scroll; */
     }
     .blurb-card img{
-        height: 70px;
+        height: 90px;
         width: 50px;
     }
     .blurb-card-details div:nth-of-type(1) button{
@@ -405,7 +405,7 @@
         margin-bottom: 3px;
     }
     .blurb-card-details div:nth-of-type(1) h3 {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
     .blurb-card-details div:nth-of-type(4){
         display: none;
