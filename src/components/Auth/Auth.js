@@ -76,101 +76,129 @@ const Auth = () => {
     }
 
     return (
-        <div className={isAuthModalOpen ? 'auth-container' : 'auth-disappear'}>
-            {isAuthModalOpen &&
-                <div className='auth-display-holder'>
-                    <div className='auth-display'>
-                        <h1>{isRegister ? 'Register' : 'Login'}</h1>
-                        {isError && <p className='error-msg'>{isError.message}</p>}
-                        <form className={isRegister ? 'auth-display-form' : 'auth-display-form-alt'}>
-                            {isRegister && <label htmlFor='penname'>
-                                PenName:
-                                <input
-                                    onChange={handleChange}
-                                    id='penname'
-                                    type='text'
-                                    placeholder='penname'
-                                    value={data.penname}
-                                    name='penname'
-                                />
-                            </label>}
-                            {isRegister && <label htmlFor='firstname'>
-                                FirstName:
-                                <input
-                                    onChange={handleChange}
-                                    id='firstname'
-                                    type='text'
-                                    placeholder='firstname'
-                                    value={data.firstname}
-                                    name='firstname'
-                                    required
-                                />
-                            </label>}
-                            {isRegister && <label htmlFor='lastname'>
-                                LastName:
-                                <input
-                                    onChange={handleChange}
-                                    id='penname'
-                                    type='text'
-                                    placeholder='lastname'
-                                    value={data.lastname}
-                                    name='lastname'
-                                />
-                            </label>}
-                            <label htmlFor='email'>
-                                Email:
-                                <input
-                                    onChange={handleChange}
-                                    id='penname'
-                                    type='email'
-                                    placeholder='email'
-                                    value={data.email}
-                                    name='email'
-                                />
-                            </label>
-                            <label htmlFor='password'>
-                                Password:
-                                <input
-                                    onChange={handleChange}
-                                    id='penname'
-                                    type='password'
-                                    placeholder='password'
-                                    value={data.password}
-                                    name='password'
-                                />
-                            </label>
+      <div className={isAuthModalOpen ? "auth-container" : "auth-disappear"}>
+        {isAuthModalOpen && (
+          <div className="auth-display-holder">
+            <div className="auth-display">
+              <h1>{isRegister ? "Register" : "Login"}</h1>
+              {isError && <p className="error-msg">{isError.message}</p>}
+              <form
+                className={
+                  isRegister ? "auth-display-form" : "auth-display-form-alt"
+                }
+              >
+                {isRegister && (
+                  <label htmlFor="penname">
+                    PenName:
+                    <input
+                      onChange={handleChange}
+                      id="penname"
+                      type="text"
+                      placeholder="penname"
+                      value={data.penname}
+                      name="penname"
+                    />
+                  </label>
+                )}
+                {isRegister && (
+                  <label htmlFor="firstname">
+                    FirstName:
+                    <input
+                      onChange={handleChange}
+                      id="firstname"
+                      type="text"
+                      placeholder="firstname"
+                      value={data.firstname}
+                      name="firstname"
+                      required
+                    />
+                  </label>
+                )}
+                {isRegister && (
+                  <label htmlFor="lastname">
+                    LastName:
+                    <input
+                      onChange={handleChange}
+                      id="penname"
+                      type="text"
+                      placeholder="lastname"
+                      value={data.lastname}
+                      name="lastname"
+                    />
+                  </label>
+                )}
+                <label htmlFor="email">
+                  Email:
+                  <input
+                    onChange={handleChange}
+                    id="penname"
+                    type="email"
+                    placeholder="email"
+                    value={data.email}
+                    name="email"
+                  />
+                </label>
+                <label htmlFor="password">
+                  Password:
+                  <input
+                    onChange={handleChange}
+                    id="penname"
+                    type="password"
+                    placeholder="password"
+                    value={data.password}
+                    name="password"
+                  />
+                </label>
 
-                            {isRegister && <label htmlFor='password'>
-                                Confirm Password:
-                                <input
-                                    onChange={handleChange}
-                                    id='password'
-                                    type='password'
-                                    placeholder='confirm password'
-                                    value={data.confirmpassword}
-                                    name='confirmpassword'
-                                />
-                            </label>}
-                            <div className='btn-container'>
-                                <button className='btn submit-btn' onClick={handleSubmit} type='submit' disabled={isLoading}>
-                                    {isLoading ? 'Loading...' : 'Submit'}
-                                </button>
-                            </div>
-                        </form>
+                {isRegister && (
+                  <label htmlFor="password">
+                    Confirm Password:
+                    <input
+                      onChange={handleChange}
+                      id="password"
+                      type="password"
+                      placeholder="confirm password"
+                      value={data.confirmpassword}
+                      name="confirmpassword"
+                    />
+                  </label>
+                )}
+                <div className="btn-container">
+                  <button
+                    className="submit-btn"
+                    onClick={handleSubmit}
+                    type="submit"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "Loading..." : "Submit"}
+                  </button>
+                </div>
+              </form>
 
-                        {!isRegister ?
-                            <p>Don't have an account?
-                                <span onClick={() => setIsRegister(!isRegister)}> Register</span>
-                            </p>
-                            : <p>Already have an account?
-                                <span onClick={() => setIsRegister(!isRegister)}> Login</span>
-                            </p>
-                        }
-                    </div>
-                </div>}
-            {isAuthModalOpen && <button onClick={() => dispatch(setIsAuthModalOpen())}><GrClose /></button>}
-        </div>
-    )
+              {!isRegister ? (
+                <p>
+                  Don't have an account?
+                  <span onClick={() => setIsRegister(!isRegister)}>
+                    {" "}
+                    Register
+                  </span>
+                </p>
+              ) : (
+                <p>
+                  Already have an account?
+                  <span onClick={() => setIsRegister(!isRegister)}> Login</span>
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+        {isAuthModalOpen && (
+          <button onClick={() => dispatch(setIsAuthModalOpen())}>
+            <GrClose />
+          </button>
+        )}
+      </div>
+    );
 }
 
 export default Auth
